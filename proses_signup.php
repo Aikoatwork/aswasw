@@ -13,6 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Jika username sudah ada, tampilkan pesan error
     if (mysqli_num_rows($result) > 0) {
         echo "Username sudah digunakan. Silakan gunakan username lain.";
+        header("Location: signup.php");
+        exit;
     } else {
         // Jika username belum ada, simpan data pengguna baru ke database
         $query = "INSERT INTO data_user (username, password) VALUES ('$username', '$password')";
