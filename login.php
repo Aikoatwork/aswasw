@@ -5,7 +5,12 @@
 </head>
 <body>
     <h1>Halaman Login</h1>
+    <?php if(isset($_GET['error'])): ?>
 
+        <p style="color: #ff0000">Username / Password salah, coba lagi</p>
+
+    <?php endif; ?>
+    
     <form action="proses_login.php" method="POST">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required><br>

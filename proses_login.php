@@ -19,8 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     } else {
         // Login gagal, tampilkan pesan error atau arahkan kembali ke halaman login
-        echo "Username atau password salah";
-        header("Location: login.php");
+        header("Location: login.php?error=1");
+        exit();
     }
 }
 
